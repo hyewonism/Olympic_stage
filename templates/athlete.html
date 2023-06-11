@@ -1,0 +1,51 @@
+{% extends "base.html" %} {% block content %}
+<head>
+  <title>Events</title>
+</head>
+<body>
+  <h1>Upcoming Events & Stages</h1>
+  {% for event in upcomingEvents %}
+  <h2>{{event[0][0]}}</h2>
+  <table class="table">
+    <tr>
+      <th>Event Name</th>
+      <th>Location</th>
+      <th>Stage name</th>
+      <th>Date</th>
+    </tr>
+    {% for sport in event %}
+    <tr>
+      <td>{{sport[1]}}</td>
+      <td>{{sport[2]}}</td>
+      <td>{{sport[3]}}</td>
+      <td>{{sport[5]}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endfor %}
+
+  <h1>Previous Events & Stages</h1>
+  {% for event in pastEvents %}
+  <h2>{{event[0][0]}}</h2>
+  <table class="table">
+    <tr>
+      <th>Event Name</th>
+      <th>Location</th>
+      <th>Stage name</th>
+      <th>Date</th>
+      <th>Position</th>
+    </tr>
+    {% for sport in event %}
+    <tr>
+      <td>{{sport[1]}}</td>
+      <td>{{sport[2]}}</td>
+      <td>{{sport[3]}}</td>
+      <td>{{sport[5]}}</td>
+      <td>{{sport[4]}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endfor %}
+</body>
+
+{% endblock %}

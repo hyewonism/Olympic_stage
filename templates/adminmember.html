@@ -1,0 +1,63 @@
+{% extends "admin.html" %} {% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Member</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Edit Member</h1>
+      <form action="/admin/member" method="post" class="form-inline">
+        <input type="hidden" name="memberid" value="{{ member[0] }}" />
+        <label for="firstname">First Name:</label>
+        <input
+          class="form-control"
+          type="text"
+          id="firstname"
+          name="firstname"
+          value="{{ member[1] }}"
+        />
+        <br />
+        <label for="lastname">Last Name:</label>
+        <input
+          class="form-control"
+          type="text"
+          id="lastname"
+          name="lastname"
+          value="{{ member[2] }}"
+        />
+        <br />
+        <label for="city">City:</label>
+        <input
+          class="form-control"
+          type="text"
+          id="city"
+          name="city"
+          value="{{ member[3] }}"
+        />
+        <br />
+        <label for="birthdate">Birthdate:</label>
+        <input
+          class="form-control"
+          type="date"
+          id="birthdate"
+          name="birthdate"
+          value="{{ member[4] }}"
+        />
+        <br />
+        <label for="teamid">Team:</label>
+        <select id="teamid" name="teamid" class="form-control">
+          {% for team in teams %} {% if team[0] == member[5] %}
+          <option value="{{ team[0] }}" selected>{{ team[1] }}</option>
+          {% else %}
+          <option value="{{ team[0] }}">{{ team[1] }}</option>
+          {% endif %} {% endfor %}
+        </select>
+        <br />
+        <input type="submit" value="Save" class="btn btn-default" />
+      </form>
+    </div>
+  </body>
+</html>
+
+{% endblock %}

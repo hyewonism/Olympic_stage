@@ -1,0 +1,73 @@
+{% extends "admin.html" %} {% block content %}
+<!-- code in here to display a list of events -->
+<!-- eventlist is the variable passed in containing list of loans -->
+<div class="container">
+  <h2>Admin positions</h2>
+
+  <h3>Gold</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Result ID</th>
+        <th>Stage ID</th>
+        <th>Member ID</th>
+        <th>Score</th>
+        <th>Position</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for entry in gold %}
+      <tr>
+        {% for item in entry %}
+        <td>{{item}}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h3>Silver</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Result ID</th>
+        <th>Stage ID</th>
+        <th>Member ID</th>
+        <th>Score</th>
+        <th>Position</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for entry in silver %}
+      <tr>
+        {% for item in entry %}
+        <td>{{item}}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h3>Bronze</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Result ID</th>
+        <th>Stage ID</th>
+        <th>Member ID</th>
+        <th>Score</th>
+        <th>Position</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for entry in bronze %}
+      <tr>
+        {% for item in entry %}
+        <td>{{item}}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

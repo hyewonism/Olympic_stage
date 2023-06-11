@@ -1,0 +1,40 @@
+{% extends "admin.html" %} {% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit event</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Edit event</h1>
+      <form action="/admin/event" method="post" class="form-inline">
+        <label for="eventid">Event id:</label>
+        <select id="eventid" name="eventid" class="form-control">
+          {% for event in events %}
+          <option value="{{ event[0] }}">{{ event[1] }}</option>
+          {% endfor %}
+        </select>
+        <br />
+        <label for="sportid">Sport:</label>
+        <select id="sportid" name="sportid" class="form-control">
+          {% for sport in sports %}
+          <option value="{{ sport[0] }}">{{sport[0]}}</option>
+          {% endfor %}
+        </select>
+        <br />
+        <label for="teamid">Team:</label>
+        <select id="teamid" name="teamid" class="form-control">
+          {% for team in teams %}
+          <option value="{{ team[0] }}">{{ team[0]}}</option>
+          {% endfor %}
+        </select>
+        <br />
+        <button>
+          <input type="submit" value="Save" class="btn btn-default" />
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
+
+{% endblock %}

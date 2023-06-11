@@ -1,0 +1,50 @@
+{% extends "admin.html" %} {% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit event</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Edit event stage</h1>
+      <form action="/admin/eventstage" method="post" class="form-inline">
+        <label for="eventid">Event Ids:</label>
+        <select id="eventid" name="eventid" class="form-control">
+          {% for event_id in event_ids %} {% if event_id == event_id %}
+          <option value="{{ event_id }}" selected>{{ event_id }}</option>
+          {% else %}
+          <option value="{{ event_id }}">{{ event_id }}</option>
+          {% endif %} {% endfor %}
+        </select>
+        <br />
+        <label for="stagename">Stage name:</label>
+        <select id="stagename" name="stagename" class="form-control">
+          {% for stage in stage_names %}
+          <option value="{{ stage }}">{{ stage }}</option>
+          {% endfor %}
+        </select>
+        <br />
+        <label for="location">Location:</label>
+        <select id="location" name="location" class="form-control">
+          {% for location in locations %}
+          <option value="{{ location }}">{{ location }}</option>
+          {% endfor %}
+        </select>
+        <br />
+        <label for="stagedate">Stage date:</label>
+        <input
+          class="form-control"
+          type="date"
+          id="stagedate"
+          name="stagedate"
+        />
+
+        <button>
+          <input type="submit" value="Save" class="btn btn-default" />
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
+
+{% endblock %}
