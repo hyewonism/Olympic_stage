@@ -1,3 +1,4 @@
+
 {% extends "base.html" %} {% block content %}
 <!-- code in here to display a list of books-->
 <h2>Member List</h2>
@@ -19,7 +20,7 @@
       <td>{{member[0]}}</td>
       <td>{{member[1]}}</td>
       <td>
-        <a href="/athlete?memberid={{member[0]}}"> {{member[2]}} </a>
+        <a href="/athlete?memberName={{member[2]}}"> {{member[2]}} </a>
       </td>
       <td>{{member[3]}}</td>
       <td>{{member[4]}}</td>
