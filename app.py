@@ -50,17 +50,17 @@ def athelete():
     """
     http://127.0.0.1:5000/athlete?memberid=5632
     """
-    memberid = request.args.get('memberid')
+    memberName = request.args.get('memberName')
 
     dbconn.execute(
         """
         SELECT e.sport, e.EventName, es.location, es.stagename, esr.position, es.stagedate
-        FROM event_stage_results esr
-        JOIN event_stage es ON esr.StageID = es.StageID
-        JOIN events e ON es.EventID = e.EventID
-        WHERE esr.MemberID = %s;
+        FROM event_stage_results as esr
+        JOIN event_stage as es ON esr.StageID = es.StageID
+        JOIN events as e ON es.EventID = e.EventID
+        WHERE CONCAT(esr.firstname, ' ', esr.lastname) = %s;
         """,
-        (memberid,),
+        (memberName,),
     )
     events = dbconn.fetchall()
     upcomingEvents = {}
