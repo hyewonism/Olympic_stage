@@ -119,13 +119,14 @@ def admin_search():
     else:
         return render_template("adminsearch.html")
 
+        
 
 @app.route("/admin/member", methods=["GET", "POST"])
 def admin_member():
     """
     A search that searches either/or both of members and events using partial matches. o Add new members and edit the details of existing members.
     """
-    if request.method == "POST":
+    if request.method == "GET":
         memberid = request.form.get("memberid")
         firstname = request.form.get("firstname")
         lastname = request.form.get("lastname")
