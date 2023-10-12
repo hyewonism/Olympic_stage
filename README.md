@@ -2,19 +2,19 @@
 
 
 ## ■ Solution Structure
-The project includes the following components.
+
 
 ### **□ Routes** 
 
-Defined to manage a variety of functionalities, including admin search, event management, user login, and user registration. Specific functions are connected to these routes.
+
 
 ### **□ Functions** 
 
-Associated function that handles the logic behind it. They perform tasks such as data retrieval, processing, and rendering templates.
+
 
 ### **□ Templates** 
 
-Used to produce dynamic web pages and display data to users. To pass data and render the appropriate content, routes and functions work with templates.
+
 
 ## ■ Assumptions and Design Decisions
 ### **□ Assumptions**
@@ -40,4 +40,3 @@ The web application's design and implementation would need to handle the selecti
 
 ### **□ Note**
 
-The actual implementation of these changes is not included in the current version of the application.
